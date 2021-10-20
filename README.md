@@ -1,6 +1,12 @@
 # interview_poker
 
-//LINK
+**// Problem 1**
+
+use test
+Select tree_table.id, tree_table.friendly_name, tree_table.scientific_name, tree_table.owner_id, user_table.name, (select count(*) from likes_table where tree_table.id = likes_table.tree_id) as TotalLikes from tree_table  
+INNER JOIN user_table ON tree_table.owner_id = user_table.id AND user_table.email = 'adam@versett.com' 
+
+**// Problem 2**
 https://jsfiddle.net/xboysms/0m9Lgqr3/8/
 
 // GENERAL
@@ -88,10 +94,3 @@ INSERT INTO [dbo].[user_table]
            ,<name, nvarchar(200),>)
 GO
 
-
-
-
-// RUN
-use test
-Select tree_table.id, tree_table.friendly_name, tree_table.scientific_name, tree_table.owner_id, user_table.name, (select count(*) from likes_table where tree_table.id = likes_table.tree_id) as TotalLikes from tree_table  
-INNER JOIN user_table ON tree_table.owner_id = user_table.id AND user_table.email = 'adam@versett.com' 
