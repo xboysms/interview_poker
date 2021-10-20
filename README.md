@@ -40,4 +40,52 @@ GO
 
 // Insert Data
 
+**1. likes_table**
+USE [test]
+GO
+
+INSERT INTO [dbo].[likes_table]
+           ([tree_id]
+           ,[user_id])
+     VALUES
+           (<tree_id, nchar(10),>
+           ,<user_id, nchar(10),>)
+GO
+
+**2. tree_table**
+USE [test]
+GO
+
+INSERT INTO [dbo].[tree_table]
+           ([id]
+           ,[friendly_name]
+           ,[scientific_name]
+           ,[owner_id])
+     VALUES
+           (<id, nchar(10),>
+           ,<friendly_name, nvarchar(200),>
+           ,<scientific_name, nvarchar(200),>
+           ,<owner_id, nchar(10),>)
+GO
+
+**3. user_table**
+USE [test]
+GO
+
+INSERT INTO [dbo].[user_table]
+           ([id]
+           ,[email]
+           ,[name])
+     VALUES
+           (<id, nchar(10),>
+           ,<email, nvarchar(200),>
+           ,<name, nvarchar(200),>)
+GO
+
+
+
+
 // RUN
+use test
+Select tree_table.id, tree_table.friendly_name, tree_table.scientific_name, tree_table.owner_id, user_table.name, (select count(*) from likes_table where tree_table.id = likes_table.tree_id) as TotalLikes from tree_table  
+INNER JOIN user_table ON tree_table.owner_id = user_table.id AND user_table.email = 'adam@versett.com' 
