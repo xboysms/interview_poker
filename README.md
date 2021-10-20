@@ -1,5 +1,11 @@
 # interview_poker
 
+//LINK
+https://jsfiddle.net/xboysms/0m9Lgqr3/8/
+
+// GENERAL
+- Update Bootstrap in
+
 // Generate SQL DB
 
 USE [test]
