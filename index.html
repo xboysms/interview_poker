@@ -1,0 +1,49 @@
+<html>
+<head>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+</head>
+
+<body>
+    <div class="container deck">
+        <div class="row">
+            <div class="col">
+                <h1>A Deck of Cards</h1>
+                <button class="btn" onclick="shuffle()" title="Click here to generate a new deck.">Shuffle</button>
+                <button class="btn" onclick="runProcess()" title="Click here to generate a new deck.">Start</button>
+                <button class="btn" onclick="PokerHand()">Analyse</button>
+                <hr />
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <h5>Sort by</h5>
+                <button class="btn" onclick="sortByLowToHigh()">Low To High</button>
+                <hr />
+            </div>
+        </div>
+                
+        <div class="row">
+            <div class="col">
+                <h5>Result</h5>
+                <label id="lblResult"></label>
+                <div id="runDeck"></div>
+                <hr />
+            </div>
+        </div>
+                
+        <div class="row">
+            <div class="col">
+                <h5>Deck</h5>
+                <div id="deck"></div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script type="text/javascript" src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
